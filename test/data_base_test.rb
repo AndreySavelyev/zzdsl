@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestDataBase < Minitest::Test
+class DataBaseTest < Minitest::Test
   def setup
     @db = DataBase.new
   end
