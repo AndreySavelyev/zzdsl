@@ -54,5 +54,6 @@ class DeveloperTest < Minitest::Test
       end
 
     assert_equal [:high], @dev.qualities[:skill_level]
+    assert_equal [:well], @dev.qualities[:work]
   end
 end

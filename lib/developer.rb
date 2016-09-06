@@ -11,15 +11,15 @@ class Developer
   def you; self; end
   def not; @quality_inversion = true; self; end
   def is value; value; end
+  def well; :well ; end
 
   def and(&block)
     instance_eval &block if block_given?
     self
   end
 
-  def if(_, *args)
-    puts "ARGS = #{args.inspect}"
-    send args.shift, args
+  def if(_, &block)
+    instance_eval &block if block_given?
     self
   end
 
@@ -29,14 +29,12 @@ class Developer
     self
   end
 
-  def your
+  def your(*args)
     @quality_upcoming = true
     self
   end
 
   def method_missing(name, *args)
-    puts "DEBUG: Name = #{name} : ARGS = #{args.count} #{args.inspect}"
-
     return self if name == :you
 
     if quality_upcoming
