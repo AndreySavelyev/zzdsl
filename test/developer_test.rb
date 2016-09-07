@@ -37,7 +37,7 @@ class DeveloperTest < Minitest::Test
   def test_multiple_quality
     @dev.are.crazy
       .and { love 'cats', 'pizza' }
-      .and{ you.are.not.in :plumbee }
+      .and { you.are.not.in :plumbee }
       .and { want 'fun', 'money' }
 
     assert_equal true, @dev.qualities[:crazy]
