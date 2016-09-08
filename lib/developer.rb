@@ -49,7 +49,6 @@ class Developer
       set_quality(name)
       return self
     end
-    super
   end
 
   private
